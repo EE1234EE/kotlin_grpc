@@ -1,0 +1,19 @@
+syntax = "proto3";
+package tutorial;
+option java_package = "com.example.quarkus.grpc";
+
+service ProductsService {
+  rpc GetProduct(ProductRequest) returns (ProductResponse) {}
+}
+
+
+message ProductRequest {
+  string productId = 1;
+}
+
+message ProductResponse {
+  string id = 1;
+  string name = 2;
+  uint32 priceCents = 3;
+  bool orderable = 4;
+}
